@@ -1,0 +1,3 @@
+const featuredPosts = JSON.parse("[{\"author\":{\"name\":\"Mustapha El-Mezziouy\",\"photo\":{\"url\":\"https://media.graphcms.com/iDvfqGryRMeKD2EETa9F\"}},\"featuredImage\":{\"url\":\"https://media.graphcms.com/y4J6aJ3ShiCkWQAIzU4n\"},\"title\":\"React Testing\",\"slug\":\"react-testing\",\"createdAt\":\"2022-01-26T22:34:33.027947+00:00\"},{\"author\":{\"name\":\"Mustapha El-Mezziouy\",\"photo\":{\"url\":\"https://media.graphcms.com/iDvfqGryRMeKD2EETa9F\"}},\"featuredImage\":{\"url\":\"https://media.graphcms.com/sVpDT2SRJSExCAiBQPEf\"},\"title\":\"Next.js is the future of Web\",\"slug\":\"nextjs\",\"createdAt\":\"2022-01-28T15:22:09.103259+00:00\"}]");
+
+export default featuredPosts;

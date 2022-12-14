@@ -1,0 +1,3 @@
+const recentPosts = JSON.parse("[{\"title\":\"React Testing\",\"featuredImage\":{\"url\":\"https://media.graphcms.com/y4J6aJ3ShiCkWQAIzU4n\"},\"createdAt\":\"2022-01-26T22:34:33.027947+00:00\",\"slug\":\"react-testing\"},{\"title\":\"Next.js is the future of Web\",\"featuredImage\":{\"url\":\"https://media.graphcms.com/sVpDT2SRJSExCAiBQPEf\"},\"createdAt\":\"2022-01-28T15:22:09.103259+00:00\",\"slug\":\"nextjs\"}]");
+
+export default recentPosts;
