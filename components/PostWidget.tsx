@@ -18,17 +18,19 @@ const PostWidget = ({ title, relatedPosts }: postCardWidgetProps) => {
       {relatedPosts?.map((post, index) => (
         <Link key={index} href={`/post/${post.slug}`}>
           <div className="flex items-center w-full mb-7 cursor-pointer">
-            <div className="relative flex items-center w-16 min-w-[60px] max-w-[60px] min-h-[60px] max-h-[60px]">
-              <Image
-                // loader={grpahCMSImageLoader}
-                alt={post.title}
-                // height="60px"
-                // width="60px"
-                layout="fill"
-                // unoptimized
-                className="object-cover rounded-full"
-                src={post.featuredImage.url}
-              />
+            <div className="relative flex items-center min-w-[60px] max-w-[60px] min-h-[60px] max-h-[60px]">
+              <div className="absolute w-full h-full">
+                <Image
+                  // loader={grpahCMSImageLoader}
+                  alt={post.title}
+                  height={200}
+                  width={200}
+                  // layout="fill"
+                  // unoptimized
+                  className="h-full w-full object-cover rounded-full"
+                  src={post.featuredImage.url}
+                />
+              </div>
             </div>
             <div className="ml-4">
               <p className="text-gray-500">{moment(post.createdAt).format('MMM DD, YYYY')}</p>

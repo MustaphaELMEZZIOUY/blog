@@ -1,1 +1,0 @@
-@headlessui/react @types/lru-cache @types/node @types/react @types/uuid autoprefixer graphql graphql-request html-react-parser keen-slider lru-cache moment next postcss prettier prettier-plugin-tailwindcss react react-dom react-icons react-multi-carousel sass tailwindcss typescript uuid

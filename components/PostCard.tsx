@@ -29,10 +29,10 @@ const PostCard = ({ post }: postCardProps) => {
         <Image
           src={post?.featuredImage?.url || ''}
           alt=""
-          className="object-top h-80 object-cover shadow-lg rounded-t-lg"
-          // width={950}
-          // height={480}
-          layout='fill'
+          className="object-top h-full w-full object-cover shadow-lg rounded-t-lg"
+          width={950}
+          height={480}
+          // layout='fill'
         />
       </div>
 

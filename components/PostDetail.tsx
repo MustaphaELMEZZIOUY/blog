@@ -162,10 +162,10 @@ const PostDetail = ({ post }: { post: postDetailsInterface }) => {
                     <Image
                         src={post?.featuredImage?.url || ''}
                         alt=""
-                        className="object-top h-80 object-cover shadow-lg rounded-t-lg"
-                        // width={900}
-                        // height={600}
-                        layout='fill'
+                        className="object-top h-full w-full object-cover shadow-lg rounded-t-lg"
+                        width={900}
+                        height={600}
+                        // layout='fill'
                     />
                 </div>
                 <div className="px-4 lg:px-0">
