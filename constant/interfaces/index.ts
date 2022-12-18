@@ -6,3 +6,4 @@ export type {default as postDetailsInterface} from './postDetailsInterface';
 export type {default as commentInterface} from './commentInterface';
 export type {default as authorInterface} from './authorInterface';
 export type {default as featuredPostsInterface} from './featuredPostsInterface';
+export type {default as Props} from './Props';
