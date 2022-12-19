@@ -48,6 +48,7 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
+// const MyHeader = ({categories}: myHeaderProps) => {
 const MyHeader = () => {
     return (
         <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-20">
@@ -69,24 +70,8 @@ const MyHeader = () => {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <Link
                                     href='/'
-                                    
                                 >
                                     <div className="flex-shrink-0 flex items-center">
-                                        {/* <div className="relative block lg:hidden h-8 w-auto">
-                                            <Image
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                                alt="Workflow"
-                                                layout='fill'
-                                            />
-                                        </div>
-                                        <div className="relative hidden lg:block h-8 w-auto">
-                                            <Image
-                                                src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                                                alt="Workflow"
-                                                layout='fill'
-                                                // loader={}
-                                            />
-                                        </div> */}
                                         <img
                                             className="block lg:hidden h-8 w-auto"
                                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
@@ -99,37 +84,14 @@ const MyHeader = () => {
                                         />
                                     </div>
                                 </Link>
-                                <div className="hidden sm:block sm:ml-6">
-                                    <div className="flex space-x-4">
-                                        {/* {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                    'px-3 py-2 rounded-md text-sm font-medium'
-                                                )}
-                                                aria-current={item.current ? 'page' : undefined}
-                                            >
-                                                {item.name}
-                                            </a>
-                                        ))} */}
-                                        {/* {categories?.map((category, index) => ( */}
+                                <div className="hidden sm:block sm:ml-6 text-white self-center">
+                                    <div className="space-x-4">
                                         {dummyCategories?.map((category: any, index: number) => (
                                             <Link
                                                 key={index}
                                                 href={`/category/${category.slug}`}
-                                                
                                             >
-                                                {/* <a
-                                                    className={classNames(
-                                                        category?.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                        'px-3 py-2 rounded-md text-sm font-medium'
-                                                    )}
-                                                    aria-current={category?.current ? 'page' : undefined}
-                                                > */}
-                                                    {category.name}
-                                                {/* </a> */}
+                                                {category.name}
                                             </Link>
                                         ))}
                                     </div>
@@ -231,7 +193,6 @@ const MyHeader = () => {
                                 >
                                     <Link
                                         href={`/category/${category.slug}`}
-                                        
                                     >
                                         {category.name}
                                     </Link>

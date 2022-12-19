@@ -37,15 +37,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-// // Fetch data at build time
-// export async function getStaticProps() {
-//   const categories = (await getCategories()) || [];
+// Fetch data at build time
+export async function getStaticProps() {
+  const categories = (await getCategories()) || [];
 
-//   return {
-//     props: {
-//       categories
-//     },
-//   };
-// }
+  return {
+    props: {
+      categories
+    },
+  };
+}
 
 export default MyApp

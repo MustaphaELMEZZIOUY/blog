@@ -51,20 +51,13 @@ const Post = ({ postDetails, relatedPosts, categories, comments }: postProps) =>
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const mySlugParam = context?.params?.slug as string | string[];
-    console.log({mySlugParam});
     
     const slug = typeof mySlugParam === 'object' ? mySlugParam[0] : mySlugParam;
-
-    console.log({slug});
-    
 
     const postDetails = (await getPostDetails(slug || '')) || null;
     const categories = (await getCategories()) || [];
     const relatedPosts = (await getSimilarPosts(postDetails.categories.map((category) => category.slug), slug || '')) || null;
     const comments = (await getComments(slug || '')) || [];
-
-
-    console.log({msg: "i gonna return something", comments});
     
     return {
         props: {
@@ -75,8 +68,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
-        // - At most once every 10 seconds
-        revalidate: 10, // In seconds
+        // - At most once every 7 days
+        revalidate: 7 * 24 * 3600, // In seconds
     }
 }
 

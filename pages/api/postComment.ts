@@ -4,12 +4,13 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import graphqlAPI from '../../constant';
 import { boolean, object, string } from 'yup';
 import * as uuid from 'uuid';
-import { rateLimit } from '../../utils';
+// import { rateLimit } from '../../utils';
+import { limiter } from '../../constant/limiter';
 
-const limiter = rateLimit({
-  interval: 60 * 1000, // 60 seconds
-  uniqueTokenPerInterval: 500, // Max 500 users per second
-})
+// const limiter = rateLimit({
+//   interval: 60 * 1000, // 60 seconds
+//   uniqueTokenPerInterval: 500, // Max 500 users per second
+// })
 
 type Data = {
   message: string

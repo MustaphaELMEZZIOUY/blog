@@ -64,6 +64,6 @@ export default function Home() {
 //     // Next.js will attempt to re-generate the page:
 //     // - When a request comes in
 //     // - At most once every 7 days
-//     // revalidate: 7 * 24 * 360, // In seconds
+//     // revalidate: 7 * 24 * 3600, // In seconds
 //   };
 // }
