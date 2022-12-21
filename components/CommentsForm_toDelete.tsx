@@ -120,7 +120,7 @@ const MyForm = ({ initialName, initialEmail, initialStoreData, slug }: {
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                                 <div>
-                                    <Field as='input' type="text" className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Name" name="name"/>
+                                    <Field as='input' type="text" className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Name" name="name" value={values.name} />
                                     {submitCount > 0 && <ErrorMessage name='name' />}
                                 </div>
 

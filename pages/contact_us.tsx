@@ -2,7 +2,7 @@ import React from 'react'
 // import { Title } from '../components/Title'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { contactUsSchema } from '../constant/schemas'
-import { Input, TextArea } from '../components/forms'
+import { Input, TextArea } from '../components/form_inputs'
 import { H1 } from '../components/terms_privacy/H1'
 
 const ContactUs = () => {

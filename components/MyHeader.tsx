@@ -8,6 +8,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { FcMenu } from 'react-icons/fc';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineBell } from 'react-icons/ai';
+import { classNames } from '../constant/functions';
 
 
 interface myHeaderProps {
@@ -44,9 +45,9 @@ const navigation = [
     { name: 'Calendar', href: '#', current: false },
 ]
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes: string[]) {
+//     return classes.filter(Boolean).join(' ')
+// }
 
 // const MyHeader = ({categories}: myHeaderProps) => {
 const MyHeader = () => {

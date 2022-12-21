@@ -1,19 +1,16 @@
-import { ErrorMessage, Field, useFormikContext } from 'formik'
 import React from 'react'
+import { Field, useFormikContext } from 'formik'
 import { contactUsFormFields } from '../../constant/interfaces';
-import { labelStyle, fieldStyle, errorStyle, fieldStyleError, labelStyleError} from '../../constant/styles';
+import { Error_Message, Label } from './';
 
 const Input = ({ label, name, type }: contactUsFormFields) => {
-    const errorS: string = errorStyle;
-    const { submitCount, errors } : {submitCount: number, errors: any} = useFormikContext();
+    const { submitCount, errors }: { submitCount: number, errors: any } = useFormikContext();
+    const fieldStyle = "py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
+    const fieldStyleError = "py-2 px-4 w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-red-300 border-red-500 rounded-md shadow-sm focus:border-red-600 focus:ring-indigo-500"
 
     return (
         <>
-            <label htmlFor={name} 
-                className={submitCount > 0 && errors[name] && labelStyleError || labelStyle}
-            >
-                {label}
-            </label>
+            <Label label={label} name={name} error={errors[name] || ""} submitCount={submitCount} />
             <Field
                 as="input"
                 type={type || "text"}
@@ -24,10 +21,8 @@ const Input = ({ label, name, type }: contactUsFormFields) => {
             />
             {
                 submitCount > 0 && (
-                    <ErrorMessage
-                        component='span'
+                    <Error_Message
                         name={name}
-                        className={errorS}
                     />
                 )
             }
