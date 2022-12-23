@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { Title } from '../components/Title'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { contactUsSchema } from '../constant/schemas'
-import { Input, TextArea } from '../components/form_inputs'
+import { Input, SubmitButton, TextArea } from '../components/form_elements'
 import { H1 } from '../components/terms_privacy/H1'
+import { FailedMessage, SuccessMessage } from '../components'
 
 const ContactUs = () => {
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [showErrorMessage, setshowErrorMessage] = useState(false);
+
     return (
         <div>
             <div className="text-center pt-5 md:pt-10 pb-2">
@@ -14,8 +18,6 @@ const ContactUs = () => {
                     Any question or remarks? just write us a message!
                 </p>
             </div>
-
-
 
             <div className="hidden sm:block" aria-hidden="true">
                 <div className="pt-5 pb-10">
@@ -52,17 +54,27 @@ const ContactUs = () => {
                                 })
 
                                 console.log('Response received')
-                                
+
                                 if (res.status === 200) {
-                                    console.log({ res, body: res.body })
+                                    console.log({ res, body: res.body });
+                                    setshowErrorMessage(false);
+                                    setShowSuccessMessage(true);
+                                    setTimeout(() => {
+                                        setShowSuccessMessage(false);
+                                    }, 5000);
                                 } else {
                                     console.log("Ups something went wrong!!!");
+                                    setShowSuccessMessage(false);
+                                    setshowErrorMessage(true);
+                                    setTimeout(() => {
+                                        setshowErrorMessage(false);
+                                    }, 5000);
                                 }
                             }}
 
                             validationSchema={contactUsSchema}
                         >
-                            {(props) => (
+                            {({ isSubmitting }) => (
                                 <Form>
                                     <div className="overflow-hidden border shadow-lg sm:rounded-md">
                                         <div className="bg-white px-4 py-5 sm:p-6">
@@ -85,12 +97,21 @@ const ContactUs = () => {
                                             </div>
                                         </div>
                                         <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                                            <button
-                                                type="submit"
-                                                className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                            <div
+                                                className="mt-8 flex flex-col lg:flex-row-reverse items-center justify-between"
                                             >
-                                                Save
-                                            </button>
+                                                {/* <button
+                                                    type="submit"
+                                                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                >
+                                                    {
+                                                        isSubmitting ? "Sending" : "Send"
+                                                    }
+                                                </button> */}
+                                                <SubmitButton isSubmitting={isSubmitting} normalTitle="Send" submittingTitle="Sending" />
+                                                {showSuccessMessage && <SuccessMessage message='Comment submitted for review' />}
+                                                {showErrorMessage && <FailedMessage message='Ups, Sorry, something went wrong, try again later.' />}
+                                            </div>
                                         </div>
                                     </div>
                                 </Form>

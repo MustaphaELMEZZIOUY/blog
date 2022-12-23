@@ -15,7 +15,7 @@ interface homeProps {
 export default function Home() {
 
   return (
-    <div className="container mx-auto md:px-10 px-3 mb-8">
+    <div className="pt-6">
       <Head>
         <title>CMS Blog</title>
         <link rel="icon" href="/favicon.ico" />

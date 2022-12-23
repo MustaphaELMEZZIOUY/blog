@@ -3,19 +3,19 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { commentInitialValues } from '../constant/initialValues';
 import { commentFormSchema } from '../constant/schemas';
 import { submitComment } from '../services';
-import { Loader } from '.';
+import { Loader, FailedMessage, SuccessMessage } from '.';
 
 const CommentsForm = ({ slug }: { slug: string }) => {
     const [localName, setLocalName] = useState<string>('');
     const [localEmail, setLocalEmail] = useState<string>('');
-    const [localStoreData, seLocalStoreData] = useState<boolean>(false);
+    const [localStoreData, setLocalStoreData] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         setIsLoading(true);
         setLocalName(window.localStorage.getItem('name') || '');
         setLocalEmail(window.localStorage.getItem('email') || '');
-        seLocalStoreData((state: boolean) => {
+        setLocalStoreData((state: boolean) => {
             return window.localStorage.getItem('name') && window.localStorage.getItem('email') ? true : false;
         });
         setIsLoading(false);
@@ -43,7 +43,7 @@ const MyForm = ({ initialName, initialEmail, initialStoreData, slug }: {
     slug: string
 }) => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-    const [showFaildeMessage, setShowFaildeMessage] = useState(false);
+    const [showErrorMessage, setshowErrorMessage] = useState(false);
     const [localStorage, setLocalStorage] = useState<Storage>();
     const initialValues = commentInitialValues(initialName, initialEmail, initialStoreData)
 
@@ -82,7 +82,7 @@ const MyForm = ({ initialName, initialEmail, initialStoreData, slug }: {
                                 storeData: storeData
                             },
                         });
-                        setShowFaildeMessage(false);
+                        setshowErrorMessage(false);
                         setShowSuccessMessage(true);
                         setTimeout(() => {
                             setShowSuccessMessage(false);
@@ -97,9 +97,9 @@ const MyForm = ({ initialName, initialEmail, initialStoreData, slug }: {
                             },
                         });
                         setShowSuccessMessage(false);
-                        setShowFaildeMessage(true);
+                        setshowErrorMessage(true);
                         setTimeout(() => {
-                            setShowFaildeMessage(false);
+                            setshowErrorMessage(false);
                         }, 5000);
                     }
                 });
@@ -145,12 +145,13 @@ const MyForm = ({ initialName, initialEmail, initialStoreData, slug }: {
                                     className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
                                 >
                                     {
-                                        isSubmitting ? '  Processing...  ' : 'Post Comment'
+                                        isSubmitting ? 'Processing ...' : 'Post Comment'
                                     }
-
                                 </button>
-                                {showSuccessMessage && <span className="text-lg float-right font-normal px-4 py-2 border border-teal-500 bg-teal-500 text-white rounded-lg">Comment submitted for review</span>}
-                                {showFaildeMessage && <span className="text-lg float-right font-normal px-4 py-2 border border-red-600 bg-red-600 text-white rounded-lg">Ups, Sorry, something went wrong, try again later.</span>}
+                                {/* {showSuccessMessage && <span className="text-lg float-right font-normal px-4 py-2 border border-teal-500 bg-teal-500 text-white rounded-lg">Comment submitted for review</span>}
+                                {showErrorMessage && <span className="text-lg float-right font-normal px-4 py-2 border border-red-600 bg-red-600 text-white rounded-lg">Ups, Sorry, something went wrong, try again later.</span>} */}
+                                {showSuccessMessage && <SuccessMessage message='Comment submitted for review'/>}
+                                {showErrorMessage && <FailedMessage message='Ups, Sorry, something went wrong, try again later.'/>}
                             </div>
 
                         </div>

@@ -11,3 +11,5 @@ export { default as Comments } from './Comments';
 export { default as FeaturedPosts } from './FeaturedPosts';
 export { default as FeaturedPostCard } from './FeaturedPostCard';
 export {default as Footer} from './Footer';
+export {default as SuccessMessage} from './SuccessMessage';
+export {default as FailedMessage} from './FailedMessage';

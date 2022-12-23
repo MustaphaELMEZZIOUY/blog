@@ -14,7 +14,7 @@ const Layout = ({ categories, children }: layoutProps) => {
             <MyHeader
             // categories={categories} 
             />
-            <div className='pt-8'>
+            <div className='container mx-auto md:px-10 px-3 mb-8'>
                 {children}
             </div>
             <Footer />

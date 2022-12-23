@@ -30,6 +30,7 @@ const PostDetail = ({ post }: { post: postDetailsInterface }) => {
                         rel="noopener noreferrer"
                         target='_blank'
                         className="underline text-cyan-500"
+                        key={index}
                     >
                         {
                             obj?.children?.map((item: any, itemIndex: number) => getContentFragment(itemIndex, item.text, item))
@@ -39,6 +40,7 @@ const PostDetail = ({ post }: { post: postDetailsInterface }) => {
                     <Link
                         href={obj.href}
                         passHref
+                        key={index}
                     >
                         {/* <a
                             className="underline text-cyan-500"
@@ -119,7 +121,7 @@ const PostDetail = ({ post }: { post: postDetailsInterface }) => {
 
             case 'bulleted-list':
                 return (
-                    <ul key={index} className='list-square'>
+                    <ul key={index + "ul"} className='list-square'>
                         {
                             obj?.children?.map((listItem: any, listItemIndex: number) => getContentFragment(listItemIndex, listItem?.text, listItem, listItem?.type))
                         }
@@ -128,7 +130,7 @@ const PostDetail = ({ post }: { post: postDetailsInterface }) => {
 
             case 'numbered-list':
                 return (
-                    <ol key={index} className='list-decimal'>
+                    <ol key={index + "ol"} className='list-decimal'>
                         {
                             obj?.children?.map((listItem: any, listItemIndex: number) => getContentFragment(listItemIndex, listItem?.text, listItem, listItem?.type))
                         }

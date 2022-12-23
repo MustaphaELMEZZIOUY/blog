@@ -25,40 +25,35 @@ const Post = ({ postDetails, relatedPosts, categories, comments }: postProps) =>
     }
 
     return (
-        <>
-            <div className="container mx-auto md:px-10 px-3 mb-8">
-                
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div className="col-span-1 lg:col-span-8">
-                        <PostDetail post={postDetails} />
-                        <Author author={postDetails.author} />
-                        {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} /> */}
-                        <CommentsForm slug={postDetails.slug} />
-                        {comments?.length > 0 && <Comments comments={comments} />}
-                    </div>
-                    <div className="col-span-1 lg:col-span-4">
-                        <div className="relative lg:sticky lg:top-20">
-                            <PostWidget title='Related Posts' relatedPosts={relatedPosts} />
-                            <Categories categories={categories} />
-                        </div>
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-3">
+            <div className="col-span-1 lg:col-span-8">
+                <PostDetail post={postDetails} />
+                <Author author={postDetails.author} />
+                {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} /> */}
+                <CommentsForm slug={postDetails.slug} />
+                {comments?.length > 0 && <Comments comments={comments} />}
+            </div>
+            <div className="col-span-1 lg:col-span-4">
+                <div className="relative lg:sticky lg:top-20">
+                    <PostWidget title='Related Posts' relatedPosts={relatedPosts} />
+                    <Categories categories={categories} />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const mySlugParam = context?.params?.slug as string | string[];
-    
+
     const slug = typeof mySlugParam === 'object' ? mySlugParam[0] : mySlugParam;
 
     const postDetails = (await getPostDetails(slug || '')) || null;
     const categories = (await getCategories()) || [];
     const relatedPosts = (await getSimilarPosts(postDetails.categories.map((category) => category.slug), slug || '')) || null;
     const comments = (await getComments(slug || '')) || [];
-    
+
     return {
         props: {
             postDetails,

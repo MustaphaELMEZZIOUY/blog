@@ -1,7 +1,7 @@
 import { Field, useFormikContext } from 'formik'
 import React from 'react'
 import { contactUsFormFields } from '../../constant/interfaces';
-import { Error_Message, Label } from './';
+import { Error_Message, Label } from '.';
 
 const TextArea = ({ label, name }: contactUsFormFields) => {
     const { submitCount, errors }: { submitCount: number, errors: any } = useFormikContext();
