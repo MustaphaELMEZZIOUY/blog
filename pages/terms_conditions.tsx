@@ -47,7 +47,13 @@ const Privacy_policy = () => {
                     <P>
                         <>
                             This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the
-                            <a href="https://www.termsandconditionsgenerator.com/">Free Terms and Conditions Generator</a>.
+                            <a
+                                href="https://www.termsandconditionsgenerator.com/"
+                                rel="noopener noreferrer"
+                                target='_blank'
+                            >
+                                Free Terms and Conditions Generator
+                            </a>.
                         </>
                     </P>
 

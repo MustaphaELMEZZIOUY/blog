@@ -38,13 +38,17 @@ const Privacy_policy = () => {
                             website with regards to the information that they shared and/or collect in MYXYZ.
                             This policy is not applicable to any information collected offline or via channels other than this website.
                             Our Privacy Policy was created with the help of the
-                            <a href="https://www.privacypolicygenerator.info/">
+                            <a
+                                rel="noopener noreferrer"
+                                target='_blank'
+                                href="https://www.privacypolicygenerator.info/"
+                            >
                                 Free Privacy Policy Generator
                             </a>.
                         </>
                     </P>
 
-                    <H2 title="Consent"/>
+                    <H2 title="Consent" />
 
                     <P>
                         <>
@@ -52,7 +56,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Information we collect"/>
+                    <H2 title="Information we collect" />
 
                     <P>
                         <>
@@ -71,7 +75,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="How we use your information"/>
+                    <H2 title="How we use your information" />
 
                     <P>
                         <>
@@ -89,7 +93,7 @@ const Privacy_policy = () => {
                         <LI>Find and prevent fraud</LI>
                     </UL>
 
-                    <H2 title="Log Files"/>
+                    <H2 title="Log Files" />
 
                     <P>
                         <>
@@ -97,7 +101,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Cookies and Web Beacons"/>
+                    <H2 title="Cookies and Web Beacons" />
 
                     <P>
                         <>
@@ -105,7 +109,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Google DoubleClick DART Cookie"/>
+                    <H2 title="Google DoubleClick DART Cookie" />
 
                     <P>
                         <>
@@ -113,7 +117,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Our Advertising Partners"/>
+                    <H2 title="Our Advertising Partners" />
 
                     <P>
                         <>
@@ -130,13 +134,19 @@ const Privacy_policy = () => {
                             </P>
                             <P>
                                 <>
-                                    <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>
+                                    <a
+                                        href="https://policies.google.com/technologies/ads"
+                                        rel="noopener noreferrer"
+                                        target='_blank'
+                                    >
+                                        https://policies.google.com/technologies/ads
+                                    </a>
                                 </>
                             </P>
                         </LI>
                     </UL>
 
-                    <H2 title="Advertising Partners Privacy Policies"/>
+                    <H2 title="Advertising Partners Privacy Policies" />
 
                     <P>
                         <>
@@ -156,7 +166,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Third Party Privacy Policies"/>
+                    <H2 title="Third Party Privacy Policies" />
 
                     <P>
                         <>
@@ -170,7 +180,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="CCPA Privacy Rights (Do Not Sell My Personal Information)"/>
+                    <H2 title="CCPA Privacy Rights (Do Not Sell My Personal Information)" />
 
                     <P>
                         <>
@@ -198,7 +208,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="GDPR Data Protection Rights"/>
+                    <H2 title="GDPR Data Protection Rights" />
 
                     <P>
                         <>
@@ -241,7 +251,7 @@ const Privacy_policy = () => {
                         </>
                     </P>
 
-                    <H2 title="Children's Information"/>
+                    <H2 title="Children's Information" />
 
                     <P>
                         <>
