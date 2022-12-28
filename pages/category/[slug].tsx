@@ -21,7 +21,7 @@ const CategoryPost = ({ posts, categories }: categoriesProps) => {
 
     return (
         <div className="container mx-auto md:px-10 px-3 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-3">
                 <div className="col-span-1 lg:col-span-8">
                     {posts.map((post, index) => (
                         <PostCard key={index} post={post.node} />
