@@ -10,7 +10,7 @@ import { Router } from 'next/router';
 // import { Router } from 'next/dist/client/router';
 
 
-NProgress.configure({ showSpinner: false, parent: "#spinnerParent",});
+NProgress.configure({ showSpinner: false, parent: "#spinnerParent", });
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();

@@ -134,7 +134,9 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <form action="">
+                    <form id="sib-form" method="POST"
+                        action="https://5d672bc0.sibforms.com/serve/MUIEACqE5QsChErgLQhPDSyHlwygXzngewb5cnrO0j9yrFKZeHF25QDtz_T3RV3wm81XWYQElGxNpkq294Yvqqc4JLUue7AiypVFfW-0kNuME9iIndx4Xh3LO5kyyREcsd4X6-uQOX6MSQipKWrf7U0veupxJ5uwE0GVXKgoJvIxCO86z6Bf-eIlHKLkGUn2laQ5hAuikvHAD98x"
+                        data-type="subscription">
                         <div className="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
                             <div className="md:ml-auto md:mb-6">
                                 <p className="">
@@ -144,50 +146,18 @@ const Footer = () => {
 
                             <div className="md:mb-6">
                                 <input
-                                    type="text"
-                                    className={
-                                        `
-                                            form-control
-                                            block
-                                            w-full
-                                            px-3
-                                            py-1.5
-                                            text-base
-                                            font-normal
-                                            text-gray-700
-                                            bg-white 
-                                            bg-clip-padding
-                                            border border-solid border-gray-300
-                                            rounded
-                                            transition
-                                            ease-in-out
-                                            m-0
-                                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                                        `
-                                    }
-                                    id="exampleFormControlInput1"
-                                    placeholder="Email address" />
+                                    type="text" id="EMAIL" name="EMAIL"
+                                    autoComplete="off"
+                                    placeholder="EMAIL" data-required="true" required
+                                    className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white  bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                />
                             </div>
 
                             <div className="md:mr-auto mb-6">
                                 <button
-                                    // type="submit"
-                                    className={`
-                                        inline-block 
-                                        px-6 py-2 
-                                        border-2 
-                                        border-[#e6006f] 
-                                        text-white 
-                                        font-medium 
-                                        text-xs 
-                                        leading-tight 
-                                        uppercase  
-                                        bg-[#e6006f]
-                                        rounded 
-                                        hover:bg-[#c70060] hover:border-[#c70060]
-                                        focus:outline-none focus:ring-0 
-                                        transition duration-150 ease-in-out
-                                    `}
+                                    form="sib-form"
+                                    type="submit"
+                                    className="inline-block  px-6 py-2  border-2  border-[#e6006f]  text-white  font-medium  text-xs  leading-tight  uppercase   bg-[#e6006f] rounded  hover:bg-[#c70060] hover:border-[#c70060] focus:outline-none focus:ring-0  transition duration-150 ease-in-out"
                                 >
                                     Subscribe
                                 </button>
