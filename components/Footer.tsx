@@ -8,6 +8,7 @@ import {
     FaLinkedinIn,
     FaGithub
 } from 'react-icons/fa';
+import CreateContactNLForm from './CreateContactNLForm';
 
 const socialMediasAccounts = [
     {
@@ -134,7 +135,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <form id="sib-form" method="POST"
+                    {/* <form id="sib-form" method="POST"
                         action="https://5d672bc0.sibforms.com/serve/MUIEACqE5QsChErgLQhPDSyHlwygXzngewb5cnrO0j9yrFKZeHF25QDtz_T3RV3wm81XWYQElGxNpkq294Yvqqc4JLUue7AiypVFfW-0kNuME9iIndx4Xh3LO5kyyREcsd4X6-uQOX6MSQipKWrf7U0veupxJ5uwE0GVXKgoJvIxCO86z6Bf-eIlHKLkGUn2laQ5hAuikvHAD98x"
                         data-type="subscription">
                         <div className="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
@@ -163,7 +164,8 @@ const Footer = () => {
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> */}
+                    <CreateContactNLForm />
                 </div>
 
                 <div className="mb-6">

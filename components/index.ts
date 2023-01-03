@@ -14,3 +14,4 @@ export {default as Footer} from './Footer';
 export {default as SuccessMessage} from './SuccessMessage';
 export {default as FailedMessage} from './FailedMessage';
 export {default as CookieConsents} from './cookieConsents';
+export {default as CreateContactNLForm} from './CreateContactNLForm';

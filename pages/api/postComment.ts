@@ -29,6 +29,7 @@ export default async function handler(
   try {
     await commentFormSchema.isValid(req.body);
     await limiter.check(res, 3, 'CACHE_TOKEN') // 3 requests per minute
+console.log('helo');
 
 
     const graphQLClient = new GraphQLClient((graphqlAPI), {
