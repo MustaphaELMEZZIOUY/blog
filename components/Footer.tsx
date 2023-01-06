@@ -9,162 +9,103 @@ import {
     FaGithub
 } from 'react-icons/fa';
 import CreateContactNLForm from './CreateContactNLForm';
+import { IconType } from 'react-icons/lib';
+import { classNames } from '../constant/functions';
 
 const socialMediasAccounts = [
     {
+        link: '/',
         icon: FaFacebookF,
-        color: '1877fe'
+        color: '#1877fe',
+        width: 2
     },
     {
+        link: '/',
         icon: FaTwitter,
-        color: '1da1f2'
+        color: '#1da1f2',
+        width: 3
     },
     {
+        link: '/',
         icon: FaGoogle,
-        color: 'ea4335'
+        color: '#ea4335',
+        width: 3
     },
     {
+        link: '/',
         icon: FaInstagram,
-        color: 'c32aa3'
+        color: '#e317b8',
+        width: 3
     },
     {
+        link: '/',
         icon: FaLinkedinIn,
-        color: '0a66c2'
+        color: '#0a66c2',
+        width: 3
     },
     {
+        link: '/',
         icon: FaGithub,
-        color: 'ffffff'
+        color: '#ffffff',
+        textColor: 'text-black',
+        width: 3,
     }
 ]
 
+const someLinks = [
+    {
+        label: "Terms & Conditions",
+        href: "/terms_conditions"
+    },
+    {
+        label: "Policy",
+        href: "/privacy_policy"
+    },
+    {
+        label: "Contact Us",
+        href: "/contact_us"
+    },
+    {
+        label: "About Us",
+        href: "/xyz"
+    },
+]
+
 const Footer = () => {
+    const Icon = (IconNam: IconType, width: number) => {
+        return <IconNam className={`w-${width} h-full mx-auto hover:w-${width + 1}`} />
+    }
 
     return (
         <footer className="text-center bg-gray-900 text-white">
-            <div className="container mx-auto px-5 lg:px-60 pt-6">
+            <div className="container mx-auto py-6 lg:px-60">
                 <div className="flex items-center justify-center mb-6">
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#1877fe]
-                            bg-[#1877fe]  leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaFacebookF
-                            className={`w-2 h-full mx-auto hover:w-3`}
-                        />
-                    </a>
+                    {
+                        socialMediasAccounts.map((item, index) => (
+                            <a
+                                type='button'
+                                href={item?.link || "/"}
+                                key={index}
+                                rel="noopener noreferrer"
+                                target='_blank'
 
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#1da1f2]
-                            bg-[#1da1f2]  leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaTwitter
-                            className={`w-3 h-full mx-auto hover:w-4`}
-                        />
-                    </a>
+                                className={
+                                    `
+                                        rounded-full border-2 border-[${item.color}]
+                                        bg-[${item.color}] ${item?.textColor || ""}  leading-normal uppercase 
+                                        p-none
+                                        focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
+                                    `
+                                }
+                            >
+                                {Icon(item.icon, item.width)}
+                            </a>
+                        ))
+                    }
 
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#ea4335]
-                            bg-[#ea4335]  leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaGoogle
-                            className={`w-3 h-full mx-auto hover:w-4`}
-                        />
-                    </a>
-
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#e317b8]
-                            bg-[#e317b8]  leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaInstagram
-                            className={`w-3 h-full mx-auto hover:w-4`}
-                        />
-                    </a>
-
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#0a66c2]
-                            bg-[#0a66c2]  leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaLinkedinIn
-                            className={`w-3 h-full mx-auto hover:w-4`}
-                        />
-                    </a>
-
-                    <a
-                        href="#!"
-                        type="button"
-                        className={`
-                            rounded-full border-2 border-[#ffffff]
-                            bg-[#ffffff] text-black leading-normal uppercase 
-                            p-none
-                            focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1
-                        `}
-                    >
-                        <FaGithub
-                            className={`w-3 h-full mx-auto hover:w-4`}
-                        />
-                    </a>
                 </div>
 
                 <div>
-                    {/* <form id="sib-form" method="POST"
-                        action="https://5d672bc0.sibforms.com/serve/MUIEACqE5QsChErgLQhPDSyHlwygXzngewb5cnrO0j9yrFKZeHF25QDtz_T3RV3wm81XWYQElGxNpkq294Yvqqc4JLUue7AiypVFfW-0kNuME9iIndx4Xh3LO5kyyREcsd4X6-uQOX6MSQipKWrf7U0veupxJ5uwE0GVXKgoJvIxCO86z6Bf-eIlHKLkGUn2laQ5hAuikvHAD98x"
-                        data-type="subscription">
-                        <div className="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
-                            <div className="md:ml-auto md:mb-6">
-                                <p className="">
-                                    <strong>Sign up for our newsletter</strong>
-                                </p>
-                            </div>
-
-                            <div className="md:mb-6">
-                                <input
-                                    type="text" id="EMAIL" name="EMAIL"
-                                    autoComplete="off"
-                                    placeholder="EMAIL" data-required="true" required
-                                    className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white  bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="md:mr-auto mb-6">
-                                <button
-                                    form="sib-form"
-                                    type="submit"
-                                    className="inline-block  px-6 py-2  border-2  border-[#e6006f]  text-white  font-medium  text-xs  leading-tight  uppercase   bg-[#e6006f] rounded  hover:bg-[#c70060] hover:border-[#c70060] focus:outline-none focus:ring-0  transition duration-150 ease-in-out"
-                                >
-                                    Subscribe
-                                </button>
-                            </div>
-                        </div>
-                    </form> */}
                     <CreateContactNLForm />
                 </div>
 
@@ -175,91 +116,57 @@ const Footer = () => {
                         eum harum corrupti dicta, aliquam sequi voluptate quas.
                     </p>
                 </div>
-
-                <div className="grid lg:grid-cols-4 md:grid-cols-2 justify-start">
-                    <div className="mb-6">
-                        <h5 className="uppercase font-bold mb-2.5">Links</h5>
-
-                        <ul className="list-none mb-0">
-                            <li>
-                                <a href="#!" className="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="mb-6">
-                        <h5 className="uppercase font-bold mb-2.5">Links</h5>
-
-                        <ul className="list-none mb-0">
-                            <li>
-                                <a href="#!" className="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="mb-6">
-                        <h5 className="uppercase font-bold mb-2.5">Links</h5>
-
-                        <ul className="list-none mb-0">
-                            <li>
-                                <a href="#!" className="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="mb-6">
-                        <h5 className="uppercase font-bold mb-2.5">Links</h5>
-
-                        <ul className="list-none mb-0">
-                            <li>
-                                <a href="#!" className="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" className="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div className="flex flex-col lg:flex-row lg:justify-between">
+                    {/* <h5 className="uppercase font-bold my-2.5">Terms & Conditions</h5>
+                    <h5 className="uppercase font-bold my-2.5">Policy</h5>
+                    <h5 className="uppercase font-bold my-2.5">Contact Us</h5>
+                    <h5 className="uppercase font-bold my-2.5">About Us</h5> */}
+                    {
+                        someLinks.map((item) => (
+                            <Link
+                                href={item.href}
+                                key={item.label}
+                                className="uppercase font-bold my-2.5 underline"
+                            >
+                                {item.label}
+                            </Link>
+                        ))
+                    }
                 </div>
+                {/* 
+                    *********************************************************************************************************
+                    *********************************************************************************************************
+                    *********************Do not delete this comment, it may become useful for a futur use********************
+                    *********************************************************************************************************
+                    *********************************************************************************************************
+                    <div className="grid lg:grid-cols-4 md:grid-cols-2 justify-start">
+                        <div className="mb-6">
+                            <h5 className="uppercase font-bold mb-2.5">Links</h5>
+
+                            <ul className="list-none mb-0">
+                                <li>
+                                    <a href="#!" className="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" className="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" className="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" className="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
+                */}
             </div>
 
             <div className="text-center p-4" style={{ background: 'rgba(0, 0, 0, 0.2)' }}>
                 &#169; {new Date().getFullYear()} Workflow, Inc: &nbsp;
                 <a className="text-white" href="#">All rights reserved.</a>
             </div>
-        </footer>
+        </footer >
     );
 };
 
