@@ -89,12 +89,15 @@ const MyHeader = () => {
                                         />
                                     </div>
                                 </Link>
-                                <div className="hidden sm:block sm:ml-6 text-white self-center">
-                                    <div className="space-x-4">
+                                <div className="flex-initial w-full hidden sm:block sm:ml-6 text-white self-center">
+                                    <div
+                                        className="flex justify-center space-x-6"
+                                    >
                                         {dummyCategories?.map((category: any, index: number) => (
                                             <Link
                                                 key={index}
                                                 href={`/category/${category.slug}`}
+                                                className="hover:underline border-b-2 border-white px-2"
                                             >
                                                 {category.name}
                                             </Link>

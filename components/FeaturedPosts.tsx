@@ -7,7 +7,7 @@ import { responsive } from '../constant/initialValues';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-const animation = { duration: 100000, easing: (t: number) => t };
+const animation = { duration: 70000, easing: (t: number) => t };
 
 const FeaturedPosts = ({ featuredPosts }: { featuredPosts: featuredPostsInterface[] | [] }) => {
     const [sliderRef] = useKeenSlider<HTMLDivElement>({
